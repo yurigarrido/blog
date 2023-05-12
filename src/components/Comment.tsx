@@ -15,7 +15,6 @@ export function Comment({
   const [likeCount, setLikeCount] = useState(0)
 
  function handleDeleteComment() {
-  console.log('first')
   onDeleteComment(content)
  }
 

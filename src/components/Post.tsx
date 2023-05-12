@@ -50,7 +50,6 @@ export function Post({post}: PostProps) {
   }
 
   function handleNewCommentInvalid(event: InvalidEvent<HTMLTextAreaElement>) {
-    console.log(event)
     event.target.setCustomValidity('Esse campo é obrigatório.')
   }
 
