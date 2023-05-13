@@ -1,4 +1,6 @@
-import ptBR, { format, formatDistanceToNow } from 'date-fns'
+/* eslint-disable import/no-duplicates */
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
 
 import { useState, FormEvent, ChangeEvent, InvalidEvent } from 'react'
 import { Avatar } from './Avatar'
