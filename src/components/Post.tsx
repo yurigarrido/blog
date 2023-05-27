@@ -73,7 +73,7 @@ export function Post({ post }: PostProps) {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar src={post.author.avatarUrl} data-testid='postAuthorImage' />
+          <Avatar src={post.author.avatarUrl} data-testid="postAuthorImage" />
           <div className={styles.authorInfo}>
             <strong>{post.author.name}</strong>
             <span>{post.author.role}</span>
@@ -103,7 +103,11 @@ export function Post({ post }: PostProps) {
         })}
       </div>
 
-      <form onSubmit={handleCreateNewComment} data-testid='newComentForm' className={styles.commentForm}>
+      <form
+        onSubmit={handleCreateNewComment}
+        data-testid="newComentForm"
+        className={styles.commentForm}
+      >
         <strong>deixe seu feedback</strong>
 
         <textarea

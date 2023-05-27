@@ -7,8 +7,7 @@ import { post } from './mocks/post.mock'
 
 describe('Post', () => {
   test('O nome do autor está renderizando', () => {
-    const {debug} =  render(<Post post={post as unknown as PostType} />)
-    debug()
+    render(<Post post={post as unknown as PostType}/>)
     expect(screen.getByText('Yuri Garrido')).toBeInTheDocument()
   })
   test('O cargo do autor está renderizando', () => {
