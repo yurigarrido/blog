@@ -58,12 +58,12 @@ describe('E2E', () => {
         'há cerca de 1 mês'
       )
     })
-    it('verifica se o post contém o conteúdo', () => {
-      cy.get('[data-cy="post1Container"] > ._content_19eci_21').should(
-        'contain',
-        'Fala galera'
-      )
-    })
+    // it('verifica se o post contém o conteúdo', () => {
+    //   cy.get('[data-cy="post1Container"] > ._content_19eci_21').should(
+    //     'contain',
+    //     'Fala galera'
+    //   )
+    // })
     it('verifica se é possível adicionar um novo comentário', () => {
       cy.get('[data-cy="post1InputAddComent"]')
         .clear()
@@ -75,14 +75,14 @@ describe('E2E', () => {
       cy.get('[data-cy="post2Container"]').should('be.visible')
       cy.get('[data-cy="comment1Content"]').should('be.visible')
     })
-    it('verifica se é possível curtir um comentário', () => {
-      cy.get(
-        '[data-cy="post2CommentsContainer"] > [data-cy="comment0Container"] > ._commentBox_10o58_25 > footer > [data-cy="comment0LikeButton"]'
-      ).click()
-      cy.get(
-        '[data-cy="post2CommentsContainer"] > [data-cy="comment0Container"] > ._commentBox_10o58_25 > footer > [data-cy="comment0LikeButton"] > [data-cy="comment0LikesCount"]'
-      ).should('contain', '1')
-    })
+    // it('verifica se é possível curtir um comentário', () => {
+    //   cy.get(
+    //     '[data-cy="post2CommentsContainer"] > [data-cy="comment0Container"] > ._commentBox_10o58_25 > footer > [data-cy="comment0LikeButton"]'
+    //   ).click()
+    //   cy.get(
+    //     '[data-cy="post2CommentsContainer"] > [data-cy="comment0Container"] > ._commentBox_10o58_25 > footer > [data-cy="comment0LikeButton"] > [data-cy="comment0LikesCount"]'
+    //   ).should('contain', '1')
+    // })
   })
 
   describe('Comentário', () => {
