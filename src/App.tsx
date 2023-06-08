@@ -48,7 +48,7 @@ function App() {
 
       <div className={styles.wrapper}>
         <Sidebar />
-        <main>
+        <main data-cy="postsContainer">
           {posts.map((post) => {
             return <Post key={post.id} post={post} />
           })}

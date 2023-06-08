@@ -20,9 +20,10 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
   }
 
   return (
-    <div className={styles.comment}>
+    <div className={styles.comment} data-cy="commentContainer">
       <Avatar
         data-testid="commentImage"
+        cy="commentImage"
         hasBorder={false}
         src="https://github.com/LuisCarlosCruz.png"
         alt=""
@@ -32,12 +33,17 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Luis Carlos</strong>
-              <time title="11 de maio as 08:13" dateTime="2022-05-11 08:13:30">
+              <strong data-cy="commentAuthor">Luis Carlos</strong>
+              <time
+                title="11 de maio as 08:13"
+                dateTime="2022-05-11 08:13:30"
+                data-cy="commentPublishedAtTime"
+              >
                 Cerca de 1h atrás
               </time>
             </div>
             <button
+              data-cy="commentDeleteButton"
               onClick={handleDeleteComment}
               title="Deletar comentário"
               type="button"
@@ -45,13 +51,17 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
               <Trash size={24} />
             </button>
           </header>
-          <p>{content}</p>
+          <p data-cy="commentContent">{content}</p>
         </div>
 
         <footer>
-          <button onClick={handleLikeComment} type="button">
+          <button
+            data-cy="commentLikeButton"
+            onClick={handleLikeComment}
+            type="button"
+          >
             <ThumbsUp />
-            Aplaudir <span>{likeCount}</span>
+            Aplaudir <span data-cy="commentLikesCount">{likeCount}</span>
           </button>
         </footer>
       </div>
