@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-import { wait } from '@testing-library/user-event/dist/types/utils'
-
 describe('E2E', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
