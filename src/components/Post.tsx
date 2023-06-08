@@ -152,7 +152,7 @@ export function Post({ post }: PostProps) {
               content={comment}
               key={comment}
               onDeleteComment={deleteComment}
-              id={index}
+              id={String(index)}
             />
           )
         })}
