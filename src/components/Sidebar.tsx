@@ -14,7 +14,7 @@ export function Sidebar() {
         alt="logo triangular"
       />
       <div className={styles.profile} data-cy={`${cy}UserInfo`}>
-        <Avatar src="https://github.com/yurigarrido.png" />
+        <Avatar src="https://github.com/yurigarrido.png" cy={`${cy}Avatar`} />
         <strong data-cy={`${cy}Name`}>Yuri Garrido</strong>
         <span data-cy={`${cy}Role`}>Front-End Dev</span>
       </div>

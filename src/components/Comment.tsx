@@ -6,9 +6,10 @@ import { Avatar } from './Avatar'
 interface CommentProps {
   content: string;
   onDeleteComment: (comment: string) => void;
+  id: string;
 }
 
-export function Comment({ content, onDeleteComment }: CommentProps) {
+export function Comment({ content, onDeleteComment, id }: CommentProps) {
   const [likeCount, setLikeCount] = useState(0)
 
   function handleDeleteComment() {
@@ -19,8 +20,10 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
     setLikeCount(likeCount + 1)
   }
 
+  const cy = `comment${id}`
+
   return (
-    <div className={styles.comment} data-cy="commentContainer">
+    <div className={styles.comment} data-cy={`${cy}Container`}>
       <Avatar
         data-testid="commentImage"
         cy="commentImage"
@@ -33,17 +36,17 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong data-cy="commentAuthor">Luis Carlos</strong>
+              <strong data-cy={`${cy}Author`}>Luis Carlos</strong>
               <time
                 title="11 de maio as 08:13"
                 dateTime="2022-05-11 08:13:30"
-                data-cy="commentPublishedAtTime"
+                data-cy={`${cy}PublishedAtTime`}
               >
                 Cerca de 1h atrás
               </time>
             </div>
             <button
-              data-cy="commentDeleteButton"
+              data-cy={`${cy}DeleteButton`}
               onClick={handleDeleteComment}
               title="Deletar comentário"
               type="button"
@@ -51,17 +54,17 @@ export function Comment({ content, onDeleteComment }: CommentProps) {
               <Trash size={24} />
             </button>
           </header>
-          <p data-cy="commentContent">{content}</p>
+          <p data-cy={`${cy}Content`}>{content}</p>
         </div>
 
         <footer>
           <button
-            data-cy="commentLikeButton"
+            data-cy={`${cy}LikeButton`}
             onClick={handleLikeComment}
             type="button"
           >
             <ThumbsUp />
-            Aplaudir <span data-cy="commentLikesCount">{likeCount}</span>
+            Aplaudir <span data-cy={`${cy}LikesCount`}>{likeCount}</span>
           </button>
         </footer>
       </div>

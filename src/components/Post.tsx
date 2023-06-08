@@ -69,25 +69,27 @@ export function Post({ post }: PostProps) {
 
   const isNewCommentEmpty = newCommentText.length === 0
 
+  const cy = `post${post.id}`
+
   return (
-    <article className={styles.post} data-cy="postContainer">
-      <header data-cy="postHeader">
+    <article className={styles.post} data-cy={`${cy}Container`}>
+      <header data-cy={`${cy}Header`}>
         <div className={styles.author}>
           <Avatar
             src={post.author.avatarUrl}
-            cy="postAvatar"
+            cy={`${cy}Avatar`}
             data-testid="postAuthorImage"
           />
           <div className={styles.authorInfo}>
-            <strong data-cy="postAuthorName">{post.author.name}</strong>
-            <span data-cy="postAuthorRole">{post.author.role}</span>
+            <strong data-cy={`${cy}AuthorName`}>{post.author.name}</strong>
+            <span data-cy={`${cy}AuthorRole`}>{post.author.role}</span>
           </div>
         </div>
 
         <time
           title={publishedDateFormatted}
           dateTime={post.publishedAt.toISOString()}
-          data-cy="postTimeOfPublished"
+          data-cy={`${cy}TimeOfPublished`}
         >
           {publishedDateRelativeToNow}
         </time>
@@ -97,15 +99,15 @@ export function Post({ post }: PostProps) {
         {post.content.map((line) => {
           if (line.type === 'paragraph') {
             return (
-              <p data-cy="postContentWithotLink" key={line.content}>
+              <p data-cy={`${cy}ContentWithotLink`} key={line.content}>
                 {line.content}
               </p>
             )
           }
           if (line.type === 'link') {
             return (
-              <p data-cy="postContentWithLink" key={line.content}>
-                <a href="#" data-cy="postContentLink">
+              <p data-cy={`${cy}ContentWithLink`} key={line.content}>
+                <a href="#" data-cy={`${cy}postContentLink`}>
                   {line.content}
                 </a>
               </p>
@@ -118,9 +120,9 @@ export function Post({ post }: PostProps) {
         onSubmit={handleCreateNewComment}
         data-testid="newComentForm"
         className={styles.commentForm}
-        data-cy="postNewCommentForm"
+        data-cy={`${cy}NewCommentForm`}
       >
-        <strong data-cy="postSendFeedbackMessage">deixe seu feedback</strong>
+        <strong data-cy={`${cy}SendFeedbackMessage`}>deixe seu feedback</strong>
 
         <textarea
           name="comment"
@@ -129,12 +131,12 @@ export function Post({ post }: PostProps) {
           onChange={handleNewCommentChange}
           required
           onInvalid={handleNewCommentInvalid}
-          data-cy="postInputAddComent"
+          data-cy={`${cy}InputAddComent`}
         />
 
         <footer>
           <button
-            data-cy="postButtonSubmitNewComent"
+            data-cy={`${cy}ButtonSubmitNewComent`}
             disabled={isNewCommentEmpty}
             type="submit"
           >
@@ -143,13 +145,14 @@ export function Post({ post }: PostProps) {
         </footer>
       </form>
 
-      <div className={styles.commentList} data-cy="postCommentsContainer">
-        {comments.map((comment) => {
+      <div className={styles.commentList} data-cy={`${cy}CommentsContainer`}>
+        {comments.map((comment, index) => {
           return (
             <Comment
               content={comment}
               key={comment}
               onDeleteComment={deleteComment}
+              id={index}
             />
           )
         })}
