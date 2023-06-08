@@ -34,8 +34,8 @@ jobs:
         - name: instalando as dependências
           run: npm install
 
-        - name: executando o projeto
-          run: npm run dev
-
         - name: executando o cypress para validar se a aplicação está sem erros no teste e2e
-          run: npx cypress run
+          uses: cypress-io/github-action@v2
+          with:
+            build: npm run build
+            start: npm start
