@@ -8,8 +8,12 @@
 - javascript
 - react
 - typescript
+## Testes:
+- Cypress
+- Vitest
+- React testing library
 
- CI: analise de estilo de código com Eslint para que o pull request esteja apto para ser mergeado
+ CI: analise de estilo de código com Eslint e validação de funcionalidades com Cypress para que o pull request esteja apto para ser mergeado
  CD via Vercel: https://fundamentals-of-react-with-jw896jjsn-yurigarrido.vercel.app/
 
 Funcionalidades: 
