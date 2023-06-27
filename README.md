@@ -9,8 +9,8 @@
 - react
 - typescript
 
- Continuous integration: analise de estilo de código com Eslint/Prettier para que o pull request esteja apto para ser mergeado
- Continous deployment na Vercel: https://fundamentals-of-react-with-jw896jjsn-yurigarrido.vercel.app/
+ CI: analise de estilo de código com Eslint para que o pull request esteja apto para ser mergeado
+ CD via Vercel: https://fundamentals-of-react-with-jw896jjsn-yurigarrido.vercel.app/
 
 Funcionalidades: 
   - adicionar comentário
