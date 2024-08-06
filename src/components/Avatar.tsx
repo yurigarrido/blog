@@ -4,6 +4,7 @@ import styles from './Avatar.module.css'
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   hasBorder?: boolean;
   cy?: string;
+  teste?: boolean
 }
 
 export function Avatar({
